@@ -1,0 +1,47 @@
+.StakingList {
+  @apply max-h-96 overflow-y-scroll
+  pr-3;
+}
+
+.ListItem {
+  @apply flex flex-row justify-between;
+}
+
+.Address {
+  @apply my-2
+  text-lg;
+}
+
+.Point {
+  @apply flex flex-row gap-2
+  text-lg font-bold;
+}
+
+.WarningText {
+  @apply text-red-500 text-left
+  pt-4
+}
+
+/* scrollbar style */
+/* for Firefox */
+.StakingList {
+  overflow-y: scroll;
+  scrollbar-color: #89cff0 #d1d5db;
+  scrollbar-width: thin;
+}
+/* for Chrome */
+.StakingList::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #d1d5db;
+}
+
+.StakingList::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 8px;
+  background-color: #d1d5db;
+}
+
+.StakingList::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #89cff0;
+}

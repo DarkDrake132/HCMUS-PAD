@@ -1,0 +1,177 @@
+.Page {
+  @apply flex-grow font-montserrat;
+}
+/* Banner */
+.Banner {
+  @apply bg-homePageBanner bg-cover bg-top
+  h-96 w-full
+  flex flex-wrap flex-col 
+  justify-between content-center
+  text-center text-white;
+  text-shadow: 0.3px 0.3px 3px black;
+}
+
+.Logo {
+  @apply pt-10
+
+  md:w-24
+  md:mx-auto;
+}
+
+.PoolName {
+  @apply font-semibold text-5xl
+  text-white;
+}
+
+.PoolAddress {
+  @apply font-normal text-lg
+
+  md:text-sm;
+}
+
+.Infor {
+  @apply container w-full
+  flex flex-row justify-between
+  mb-2
+
+  md:flex
+  md:flex-col
+  md:gap-5;
+}
+
+.StatusAndNetwork {
+  @apply flex flex-row
+
+  md:mx-auto;
+}
+
+.StatusAndNetwork > div {
+  @apply flex my-auto
+  pl-7 pr-3
+  border-l-4 border-solid border-white;
+}
+
+.Status {
+  @apply uppercase font-semibold 
+  text-2xl 
+  my-auto
+  pl-1 pr-7;
+}
+
+.Network {
+  @apply font-semibold text-2xl
+  my-auto;
+}
+
+.SocialMedia > ul {
+  @apply flex flex-row justify-center
+
+  md:mx-auto;
+}
+
+.SocialMedia > ul > li:hover {
+  @apply scale-125
+  ease-in-out duration-400;
+}
+.SocialMedia > ul > li:not(:hover) {
+  @apply ease-in-out duration-400;
+}
+
+/* Pool and Token Information */
+.InforSection {
+  @apply container mx-auto my-7
+  grid grid-cols-5 gap-7
+
+  lg:flex 
+  lg:flex-col
+  lg:px-3;
+}
+
+.PoolInformation {
+  @apply flex flex-grow 
+  col-span-2;
+}
+
+.SaleInformation {
+  @apply flex flex-grow 
+  col-span-3;
+}
+
+.UpcomingSale {
+  @apply flex flex-grow 
+  col-span-3;
+}
+
+.FundRaisingGoal {
+  @apply flex flex-grow 
+  col-span-2;
+}
+
+/* Your Allocation */
+
+.AllocationSection {
+  @apply container mx-auto my-7;
+}
+/* About Project */
+.PoolAboutSection {
+  @apply container mx-auto mb-14
+
+  lg:px-3;
+}
+
+/* Edit pool */
+.EditCard {
+  @apply container mx-auto
+  p-10;
+}
+
+.EditComponent {
+  @apply bg-endedPoolsBg
+  rounded-xl
+  p-10
+
+  lg:p-4;
+}
+
+.EditComponent > .Title {
+  @apply font-bold uppercase
+  text-2xl text-white;
+}
+
+.GridRow {
+  @apply grid grid-cols-2 gap-20
+  my-5
+
+  lg:grid-cols-1;
+}
+
+.Field > h3 {
+  @apply font-bold
+  text-xl text-white
+  pb-1;
+}
+
+.Input {
+  @apply flex flex-row justify-between
+  gap-3;
+}
+
+.PauseNotification {
+  @apply bg-red-100 text-center py-2 font-bold text-customRed mb-0;
+}
+
+/* Edit pool popup */
+
+.EditPopup {
+  @apply px-10 py-5;
+}
+
+.EditPopup > h3 {
+  @apply font-bold
+  text-lg text-left
+  mb-3;
+}
+
+.Modal { 
+  @apply p-4 text-center font-bold text-red-500 text-lg
+}

@@ -1,0 +1,58 @@
+.Notification {
+  @apply bottom-2 right-2
+  flex flex-row justify-between
+  px-5 max-h-20
+  bg-white
+}
+
+.Notification:hover > div > p{
+  @apply overflow-visible
+  whitespace-normal
+  max-h-full;
+  transition: all 0.25s ease-in-out;
+}
+.Notification:hover {
+  max-height: 800px;
+  transition: all 0.75s ease-in-out;
+}
+
+.CloseBtn {
+  @apply mb-auto mt-2 ml-2 -mr-3
+}
+
+.Notification > div {
+  @apply flex flex-row justify-center
+  py-5
+}
+
+.Notification > div > span {
+  @apply my-auto
+  text-3xl
+}
+
+.Notification > div > p {
+  @apply my-auto ml-4
+  font-semibold text-base
+  max-w-lg max-h-6
+  truncate
+  break-words
+}
+
+.Success {
+  @apply text-customGreen
+}
+
+.Warning {
+  @apply text-yellow-600 
+}
+
+.Danger {
+  @apply text-customRed
+}
+
+.Processing {
+  @apply text-black
+}
+.Spinner {
+  @apply flex
+}

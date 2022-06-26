@@ -1,0 +1,38 @@
+.TokenCard {
+  @apply font-montserrat
+    flex flex-col justify-between
+    h-full w-full
+    px-7
+
+    lg:min-w-[796px];
+}
+
+.Title {
+  @apply flex my-5;
+}
+
+.Title > h3 {
+  @apply uppercase font-bold
+    inline border-b-3 border-primary
+    text-xl
+    content-start;
+}
+
+.Information {
+  @apply flex flex-row
+    text-left
+    my-5;
+}
+
+.Status {
+  @apply text-primary font-bold text-xl;
+}
+
+.Label {
+  @apply w-60
+    font-normal text-xl;
+}
+
+.Value {
+  @apply font-bold text-xl;
+}

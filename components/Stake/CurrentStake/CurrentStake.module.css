@@ -1,0 +1,66 @@
+/* Wallet style */
+.WalletInfo {
+  @apply flex flex-col justify-between
+  h-full
+  p-7
+  bg-walletBg bg-cover bg-center
+
+  text-white;
+}
+
+.Info {
+  @apply grid grid-cols-2 gap-7
+  mb-5;
+}
+/* Wallet */
+.Wallet > h4 {
+  @apply text-xl text-left
+  mb-5;
+  text-shadow: 0px 2px 5px #202124;
+}
+
+.WalletToken {
+  @apply flex flex-row justify-start
+  font-bold;
+  text-shadow: 0px 2px 5px #202124;
+}
+
+.WalletToken > h2 {
+  @apply text-6xl;
+}
+
+.WalletToken > p {
+  @apply text-xl
+  pt-7;
+}
+
+/* Point Accumulated */
+.PointAccumulated {
+  @apply flex flex-col justify-start;
+  text-shadow: 0px 2px 5px #202124;
+}
+
+.PointAccumulated > h4 {
+  @apply text-xl text-left
+  mb-5;
+  text-shadow: 0px 2px 5px #202124;
+}
+
+.Point {
+  @apply flex flex-row
+  font-bold
+  pt-4;
+}
+.Point > h2 {
+  @apply text-4xl;
+}
+
+.Point > p {
+  @apply text-xl
+  pt-0.5 px-1;
+}
+
+.BuyAndWithdraw {
+  @apply grid grid-cols-2
+  justify-center gap-7;
+}

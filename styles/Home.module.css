@@ -1,0 +1,178 @@
+.BannerContainer {
+  @apply bg-homePageBanner bg-center bg-cover;
+}
+/* Banner */
+.Banner {
+  @apply h-92 w-full
+  flex flex-col justify-center content-center
+  text-center text-white m-0
+  
+  sm:h-84;
+  text-shadow: 0.7px 0.7px 3px black;
+}
+
+.ChainLogoSection {
+  @apply align-bottom 
+  m-0 mb-0 
+  pb-3 px-3;
+}
+
+.ChainLogo {
+  @apply flex flex-row justify-center 
+  content-center gap-10
+
+  sm:hidden;
+}
+
+.ChainLogoSm {
+  @apply flex-row justify-center 
+  content-center gap-10
+  hidden
+
+  sm:flex;
+}
+
+.HomePage {
+  @apply w-full
+  flex flex-col;
+}
+
+.Title {
+  @apply font-montserrat font-extrabold
+  text-5xl tracking-wider leading-tight
+  pb-4 px-2
+
+  lg:text-4xl;
+}
+
+.Title {
+  @apply md:text-3xl;
+}
+
+.Title {
+  @apply sm:text-2xl;
+}
+
+.Highlight {
+  @apply text-primary;
+}
+
+
+
+.Subtitle {
+  @apply font-light 
+  text-2xl leading-tight
+  pb-8 px-4
+
+  lg:text-xl;
+}
+
+.Subtitle {
+  @apply md:text-lg;
+}
+
+.Subtitle {
+  @apply sm:text-base;
+}
+
+.EmptyAnnounce1,
+.EmptyAnnounce2 {
+  @apply font-montserrat font-semibold uppercase
+  text-center text-2xl;
+}
+.EmptyAnnounce1 {
+  @apply text-secondary;
+}
+.EmptyAnnounce2 {
+  @apply text-white;
+  text-shadow: 1px 1px 1px black;
+}
+
+/* Live and upcoming pools */
+.LiveAndUpcomingPools {
+  @apply container 
+  mx-auto mb-20
+  w-full
+  2xl:px-4;
+}
+
+.LiveAndUpcomingPools > h2 {
+  @apply font-montserrat font-bold
+  text-3xl text-left text-secondary
+  mt-10 mb-10
+
+  md:text-2xl;
+}
+
+.EndedPools > h2 {
+  @apply font-montserrat font-bold
+  text-3xl text-left text-white
+  my-10
+
+  md:text-2xl;
+}
+
+/* Ended pools */
+.EndedPoolWrapper {
+  @apply bg-endedPoolsBg
+  pb-16;
+}
+.EndedPools {
+  @apply container mx-auto
+
+  2xl:px-4;
+}
+.EndedPools > h2 {
+  text-shadow: 1px 1px 2px black;
+}
+
+/* View More */
+.Viewmore {
+  @apply flex;
+}
+
+/* Launch Project */
+.LaunchProjectWrapper {
+  @apply mb-16;
+}
+
+.LaunchProject {
+  @apply flex flex-col;
+}
+
+.LaunchProject > div {
+  @apply container h-1 w-full
+  mx-auto mt-12 mb-5
+  bg-primary;
+}
+
+.LaunchProject > p {
+  @apply font-montserrat font-bold
+  text-4xl text-center
+  mb-6
+
+  sm:text-3xl;
+}
+
+.LaunchProject > .SmallHighlight {
+  @apply text-2xl;
+}
+.RedHightlight {
+  @apply text-customRed;
+}
+
+/* Edit pool popup */
+
+.EditPopup {
+  @apply px-10 py-5;
+}
+
+.EditPopup > h3 {
+  @apply font-bold
+  text-lg text-left
+  mb-3;
+}
+
+.Modal { 
+  @apply p-4 text-center font-bold text-red-500 text-lg
+}

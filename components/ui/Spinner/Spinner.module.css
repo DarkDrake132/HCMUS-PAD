@@ -1,0 +1,72 @@
+
+.DefaultSpinner {
+  @apply inline-block
+  w-10 h-10
+  my-auto
+}
+
+.DefaultSpinner > div {
+  @apply animate-spin 
+  w-8 h-8
+  m-1
+  border-4 border-solid border-secondary
+  rounded-full;
+
+  border-top-color: transparent !important;
+}
+
+
+.DoubleRings {
+  @apply inline-block
+  w-10 h-10
+  my-auto
+}
+
+.DoubleRings > div {
+  @apply animate-spin 
+  w-8 h-8
+  m-1
+  rounded-full
+  border-4 border-solid border-secondary;
+
+  border-top-color: transparent !important;
+  border-bottom-color: transparent !important;
+}
+
+
+.White > div{
+  @apply border-white
+}
+.Secondary > div {
+  @apply border-secondary
+}
+.Accent > div {
+  @apply border-accent
+}
+
+
+
+.SizeXL {
+  @apply w-16 h-16
+}
+.SizeXL > div {
+  @apply w-14 h-14
+  m-1
+  border-8
+}
+.SizeL {
+  @apply w-10 h-10
+}
+.SizeL > div {
+  @apply w-8 h-8
+  m-1
+  border-4
+}
+.SizeS {
+  @apply w-8 h-8
+}
+.SizeS > div {
+  @apply w-6 h-6
+  m-1
+  border-4
+}

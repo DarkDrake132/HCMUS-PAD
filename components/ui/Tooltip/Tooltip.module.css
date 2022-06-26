@@ -1,0 +1,15 @@
+.Tooltip {
+  @apply relative flex flex-col
+}
+
+.TooltipRef {
+  @apply absolute
+  flex items-center
+  top-1/2
+  opacity-0
+  px-2 py-1 rounded-md
+  bg-secondary
+  text-white
+  shadow-sm
+  ease-in-out duration-500
+} 

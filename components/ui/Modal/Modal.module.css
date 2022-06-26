@@ -1,0 +1,29 @@
+.Modal {
+  @apply fixed
+  z-50 bg-white
+  box-border shadow-3xl
+  rounded-xl overflow-hidden
+  duration-700 ease-in-out;
+}
+
+.DefaultPosition {
+  @apply w-[30%]
+  top-1/4 left-[35%]
+
+  lg:w-1/2
+  lg:left-1/4;
+}
+
+.DefaultPosition {
+  @apply md:w-2/3
+  md:left-[16.666667%];
+}
+
+.DefaultPosition {
+  @apply sm:w-[92%]
+  sm:left-[4%];
+}
+
+.RightBottom {
+  @apply right-3 bottom-3;
+}

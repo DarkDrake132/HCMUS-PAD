@@ -1,0 +1,53 @@
+.PoolCard {
+  @apply font-montserrat
+  flex flex-col justify-between
+  h-full w-full
+  px-7;
+}
+
+.Title {
+  @apply flex my-5;
+}
+
+.Title > h3 {
+  @apply uppercase font-bold
+  inline border-b-3 border-primary
+  text-xl
+  content-start;
+}
+
+.Information {
+  @apply flex flex-row
+  text-left
+  my-5;
+}
+
+.Label {
+  @apply w-56
+  font-normal text-xl;
+}
+
+.Whitelist {
+  @apply font-bold 
+  text-xl
+  text-customGreen;
+}
+
+.NotWhitelist {
+  @apply font-bold 
+  text-xl
+  text-customRed
+  w-64
+
+  lg:w-80;
+}
+
+.Value {
+  @apply font-bold 
+  text-xl;
+}
+
+.Button {
+  @apply flex-grow
+  flex flex-col;
+}

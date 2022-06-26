@@ -1,0 +1,13 @@
+.activation > a {
+  @apply text-secondary
+}
+
+.activation > div {
+  @apply h-0.5 mx-auto
+  bg-secondary
+  ease-in-out duration-300
+}
+
+.activation > div {
+  @apply w-5 !important
+}

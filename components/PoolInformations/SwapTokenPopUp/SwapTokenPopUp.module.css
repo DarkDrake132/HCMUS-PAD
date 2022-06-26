@@ -1,0 +1,48 @@
+.SwapToken {
+  @apply w-auto
+  my-6 mx-8
+  bg-white
+  rounded-xl
+}
+
+.Title {
+  @apply flex flex-col mb-3
+}
+
+.Title > h3 {
+  @apply uppercase font-bold
+  text-2xl
+}
+
+.InputInformation {
+  @apply flex flex-row justify-between
+  my-2
+}
+
+.BoldLabel {
+  @apply font-bold text-lg
+}
+
+.LightLabel {
+  @apply font-normal 
+}
+
+.SwapInput {
+  @apply flex flex-row
+  border-2 border-solid border-gray-200
+  rounded-md
+  focus-within:border-tertiary
+}
+
+.MaxAllocation {
+  @apply my-4
+}
+
+.MaxDiv {
+  @apply flex flex-row
+}
+
+.SwapValue {
+  @apply flex flex-row justify-between
+  my-5
+}

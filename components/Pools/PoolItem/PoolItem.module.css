@@ -1,0 +1,116 @@
+.Item {
+  @apply rounded-xl;
+}
+
+.PoolCard {
+  @apply grid grid-rows-5 gap-0
+  h-101 w-92
+  bg-white;
+}
+
+.Image {
+  @apply row-span-2 mt-6;
+}
+
+.Informations {
+  @apply row-span-3
+  grid grid-rows-5 gap-0;
+}
+.PoolName {
+  @apply row-span-1
+    font-montserrat font-bold
+    text-xl3
+    my-auto;
+}
+
+.UpComing {
+  @apply row-span-2
+  py-1.5
+  my-auto mx-24
+  font-montserrat font-normal text-xl
+  text-white
+  bg-primary 
+  rounded-lg;
+}
+
+.ProgressDetail {
+  @apply row-span-2 my-auto;
+}
+.ProgressDetail h4 {
+  @apply font-montserrat font-normal
+    text-left text-lg
+    pl-8;
+}
+
+.ProgressBar {
+  @apply flex flex-wrap;
+}
+
+.Meter {
+  @apply w-full mx-8;
+}
+
+.Meter::-webkit-meter-bar {
+  @apply bg-gray-300
+  border-none;
+  height: 10px;
+}
+
+.Meter::-webkit-meter-optimum-value {
+  @apply bg-primary
+  rounded-full;
+  height: 10px;
+}
+
+/* firefox css meter bar */
+.Meter {
+  width: 100%;
+  height: 10px;
+  background: #d1d5db;
+  border-radius: 9px;
+}
+.Meter::-moz-meter-bar {
+  width: 100%;
+  height: 10px;
+}
+.Meter:-moz-meter-optimum::-moz-meter-bar {
+  background: #89cff0;
+  border-radius: 16px;
+}
+
+.ProgressInfor {
+  @apply mx-8
+  flex flex-row justify-between;
+}
+
+.ProgressPercent {
+  @apply text-secondary font-medium;
+}
+
+.PrimaryHighlighted {
+  @apply text-accent;
+}
+
+.SecondaryHighlighted {
+  @apply text-secondary;
+}
+
+.Detail {
+  @apply row-span-2
+  flex flex-row justify-between
+  font-montserrat
+  text-base
+  mx-8;
+}
+
+.DetailItem {
+}
+
+.DetailItem > p {
+  @apply text-sm font-normal
+  py-2;
+}
+
+.DetailItem > h3 {
+  @apply text-xl font-bold;
+}

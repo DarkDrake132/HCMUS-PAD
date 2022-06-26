@@ -1,0 +1,45 @@
+/* Default style (BlueBorder)*/
+.Card {
+  @apply text-center 
+  border-2 border-solid border-primary
+  w-full h-full
+  rounded-xl overflow-hidden
+  block relative;
+}
+/* Hover effect */
+.HoverBounce:hover {
+  @apply cursor-pointer
+  shadow-xl 
+  -translate-y-1
+  ease-in-out duration-400;
+}
+
+.HoverBounce:not(:hover) {
+  @apply ease-in-out duration-500;
+}
+
+.HoverScaleUp:hover {
+  @apply cursor-pointer
+  scale-101
+  shadow-lg
+  ease-in-out duration-400;
+}
+.HoverScaleUp:not(:hover) {
+  @apply ease-in-out duration-500;
+}
+
+/* Border style */
+
+.WhiteBorder {
+  @apply border-2 border-solid border-white;
+}
+
+.DashedBorder {
+  @apply border-none;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%236A6A6AFF' stroke-width='2' stroke-dasharray='30%2c28' stroke-dashoffset='16' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 16px;
+}
+
+.Tertiary {
+  @apply border-tertiary;
+}

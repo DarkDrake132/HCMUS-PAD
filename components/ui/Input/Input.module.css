@@ -1,0 +1,27 @@
+.Input {
+  @apply w-full
+    border-2 border-solid border-gray-200 rounded-md
+    font-montserrat font-normal
+    text-lg
+    py-2 px-2
+    outline-none
+    focus:border-tertiary
+}
+
+.NoClick {
+  @apply pointer-events-none
+}
+
+.NoBorder {
+  @apply border-none
+}
+
+/* specified input style */
+.Search {
+  @apply border-none
+  w-full rounded-xl
+}
+
+.Swap {
+  @apply px-10
+}

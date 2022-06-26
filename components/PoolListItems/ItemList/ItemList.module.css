@@ -1,0 +1,12 @@
+.List {
+  max-width: '1024px';
+}
+
+.NotificationText {
+  @apply text-center text-xl font-medium
+  my-8 px-2
+}
+
+.LoadingMessage {
+  @apply flex flex-row justify-center
+}

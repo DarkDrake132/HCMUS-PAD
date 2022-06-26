@@ -1,0 +1,54 @@
+.Information {
+  @apply container mx-auto 
+  grid grid-cols-5 gap-7
+  my-7
+  font-montserrat
+
+  lg:flex
+  lg:flex-col
+  lg:h-auto
+  lg:min-w-[375px];
+}
+
+.StakeToken {
+  @apply col-span-2
+
+  lg:px-3;
+}
+
+.StakeEnd {
+  @apply w-full h-full flex items-center justify-center text-xl;
+}
+
+.CurrentStake {
+  @apply col-span-3
+  
+  lg:px-3;
+}
+
+/* Edit pool popup */
+
+.EditPopup {
+  @apply px-10 py-5;
+}
+
+.EditPopup > h3 {
+  @apply font-bold
+  text-lg text-left
+  mb-3;
+}
+
+.Modal { 
+  @apply p-4 text-center font-bold text-red-500 text-lg
+}
+
+.RightInput {
+  @apply flex;
+}
+
+.SwapInput {
+  @apply flex flex-row
+  border-2 border-solid border-gray-200
+  rounded-md
+  focus-within:border-tertiary;
+}

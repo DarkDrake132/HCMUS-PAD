@@ -1,0 +1,59 @@
+.SwapToken {
+  @apply w-auto flex flex-col justify-between
+  my-6 mx-7
+  bg-white
+  rounded-xl;
+}
+
+.Title {
+  @apply flex flex-col
+  mb-5;
+}
+
+.Title > h3 {
+  @apply uppercase font-bold text-secondary
+    text-xl;
+}
+
+.InputSection {
+  @apply mb-5;
+}
+
+.InputLabel {
+  @apply flex flex-row justify-between
+  mx-1;
+}
+
+.BoldLabel {
+  @apply font-bold text-lg;
+}
+
+.LightLabel {
+  @apply font-normal;
+}
+
+.SwapInput {
+  @apply flex flex-row
+  border-2 border-solid border-gray-200
+  rounded-md
+  focus-within:border-tertiary;
+}
+
+.RightInput {
+  @apply pr-3;
+}
+
+.MaxAllocation {
+}
+
+.MaxDiv {
+  @apply flex flex-row;
+}
+
+.SwapValue {
+  @apply flex flex-row justify-between;
+}
+
+.RightInput {
+  @apply flex flex-row;
+}

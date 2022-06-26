@@ -1,0 +1,95 @@
+.List {
+}
+
+.Item {
+  @apply my-3;
+}
+
+.PoolItem {
+  @apply flex flex-row justify-between
+  font-montserrat text-xl
+  h-36;
+}
+
+.PoolLogo {
+  @apply flex flex-row justify-center
+  my-auto
+  w-60;
+}
+
+/* style of pool data contain 2 elements */
+.PoolData2Col {
+  @apply grid grid-cols-2
+  text-left;
+}
+
+.PoolData2Col > .totalRaise {
+  @apply w-60 text-center
+  font-bold 
+  text-secondary;
+}
+
+.PoolData2Col > .unsoldToken {
+  @apply font-bold pl-20;
+}
+
+.CustomButton {
+  @apply flex flex-row justify-between
+  my-auto
+  w-60;
+}
+
+/* style of pool data contain 3 elements */
+.PoolData3Col {
+  @apply flex-grow
+  flex flex-row justify-between
+  ml-10;
+}
+
+.PoolData3Col > .beginTime {
+  @apply ml-10;
+}
+
+.PoolData3Col > .moneyRaise {
+  @apply my-auto
+  w-60
+  font-bold
+  text-secondary;
+}
+
+/* style of pool data contain 4 elements */
+.PoolData4Col {
+  @apply flex-grow
+  flex flex-row justify-between;
+}
+
+.PoolData4Col > div,
+.PoolData2Col > div {
+  @apply flex flex-col justify-center;
+}
+
+.progress {
+  @apply w-56;
+}
+
+.ratio {
+  @apply w-56;
+}
+
+.network {
+  @apply my-auto
+  w-48;
+}
+
+.beginTime,
+.endTime {
+  @apply my-auto
+  w-48;
+}
+
+.PoolData4Col > .moneyRaise {
+  @apply my-auto
+  w-48
+  font-bold
+  text-secondary;
+}

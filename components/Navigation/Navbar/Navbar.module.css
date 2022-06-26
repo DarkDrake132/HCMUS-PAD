@@ -1,0 +1,43 @@
+.Nav {
+  @apply flex align-middle
+
+  md:hidden;
+}
+
+.NavList {
+  @apply flex flex-wrap content-center;
+}
+
+.NavItem {
+  @apply flex
+  px-0 py-0
+  mx-3
+
+  font-montserrat font-bold
+  text-xl text-gray-600;
+}
+
+.aTag {
+  @apply text-center;
+}
+
+.aTag:hover {
+  @apply text-secondary
+  cursor-pointer
+  ease-in-out duration-400;
+}
+.aTag:not(:hover) {
+  @apply ease-in-out duration-400;
+}
+
+.NavLink > div {
+  @apply w-0 h-0.5 mx-auto;
+}
+
+.aTag:hover + div {
+  @apply w-5 ease-in-out duration-400
+  bg-secondary;
+}
+.aTag:not(:hover) + div {
+  @apply ease-in-out duration-400;
+}

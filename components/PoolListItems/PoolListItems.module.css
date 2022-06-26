@@ -1,0 +1,26 @@
+.ListItems {
+  @apply my-16
+}
+
+.Title {
+  @apply font-montserrat font-bold
+    text-2xl text-black
+    pb-1
+    inline
+    border-b-3 border-primary
+}
+
+.EmptyAnnounce {
+  @apply font-montserrat font-semibold
+  text-center text-xl text-accent
+  my-10
+}
+
+.NotificationText {
+  @apply text-center text-xl font-medium
+  my-8 px-2
+}
+
+.LoadingMessage {
+  @apply flex flex-row justify-center
+}

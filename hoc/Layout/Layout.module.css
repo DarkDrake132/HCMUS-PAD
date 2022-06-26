@@ -1,0 +1,4 @@
+.Layout {
+  @apply min-h-screen min-w-min
+  flex flex-col;
+}

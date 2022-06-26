@@ -1,0 +1,31 @@
+.ItemHead {
+  @apply mt-5 mb-3
+}
+
+.FourColumns {
+  @apply flex flex-row justify-between
+}
+
+.FourColumns > h3 {
+  @apply w-60 
+}
+
+.FiveColumns {
+  @apply flex flex-row justify-around
+
+}
+
+.FiveColumns > h3:nth-child(1) {
+  @apply w-60
+}
+.FiveColumns > h3:nth-child(2) {
+  @apply w-56
+}
+.FiveColumns > h3:nth-child(3), .FiveColumns > h3:nth-child(4), .FiveColumns > h3:nth-child(5) {
+  @apply w-48
+}
+
+.FourColumns > h3, .FiveColumns > h3 {
+  @apply font-montserrat font-bold text-1xl
+    p-3
+}

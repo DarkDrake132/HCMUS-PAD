@@ -1,0 +1,146 @@
+.Wrapper {
+  @apply border-b-1 border-gray-300
+  w-full
+  mb-auto mt-0;
+}
+
+.TemporaryNoti {
+  @apply font-montserrat
+  font-bold
+  text-red-500
+  h-16
+  bg-red-50
+  border-1 border-solid border-red-100
+  flex flex-row
+  justify-center;
+}
+.TemporaryNoti > p {
+  @apply text-center my-auto;
+}
+
+.Noti {
+  @apply font-montserrat
+  text-xs
+  flex flex-row
+  justify-center
+}
+.Noti > p {
+  @apply text-center my-auto
+}
+
+
+.Header {
+  @apply container 
+  flex flex-row justify-between
+  h-24
+
+  mx-auto
+  pr-3
+
+  md:h-20;
+}
+
+.Logo {
+  @apply w-72
+  flex flex-row
+  sm:hidden;
+}
+
+.MobileLogo {
+  @apply hidden
+
+  sm:inline-block
+  ml-4;
+}
+
+.aTag {
+  @apply my-auto;
+}
+
+.NavBar {
+  @apply flex justify-end;
+}
+
+/* Connect button and wallet after connected */
+.ConnectWallet {
+  @apply flex justify-end
+  ml-5;
+}
+
+.WalletsModal {
+  @apply flex flex-col
+}
+
+.WalletsModal > h3 {
+  @apply font-montserrat font-bold
+  text-2xl text-center text-secondary
+  p-3
+}
+
+.Wallet {
+  @apply flex flex-row justify-end
+  relative
+  ml-5;
+}
+
+.Wallet > div {
+  @apply flex flex-row
+  justify-center;
+}
+
+.ChainIcon {
+  @apply flex
+  my-auto
+  w-8;
+}
+
+.Balance {
+  @apply my-auto 
+  px-2 py-1
+  border-r-1 border-solid border-secondary
+  font-bold
+  text-secondary text-base;
+}
+
+.WalletAddress {
+  @apply my-auto
+  py-1 px-2
+  rounded-full
+  text-secondary
+  font-semibold text-base
+
+  hover:cursor-pointer;
+}
+
+.CopyIcon {
+  @apply my-auto
+  font-medium
+  text-base text-secondary
+
+  hover:cursor-pointer;
+}
+
+.Menu {
+  @apply hidden
+  md:flex
+  pl-8 pr-4;
+}
+
+.MenuClosed {
+  @apply hidden;
+}
+
+.MenuOpened {
+  @apply bg-primary bg-opacity-40;
+}
+
+.NavLink {
+  @apply flex flex-row justify-center
+  h-14;
+}
+
+.aTag {
+  @apply font-montserrat font-bold
+  text-xl text-secondary
+  leading-10;
+}

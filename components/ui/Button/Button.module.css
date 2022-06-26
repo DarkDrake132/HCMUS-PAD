@@ -1,0 +1,203 @@
+.Button {
+  @apply font-montserrat font-semibold
+  text-base text-white
+  h-12 px-7
+  rounded
+  shadow-sm
+  bg-gradient-to-r from-tertiary via-primary to-tertiary
+  bg-right
+  bg-origin-border
+  bg-200%
+  duration-500;
+}
+.Button:hover {
+  @apply shadow-xl
+  bg-left;
+}
+
+.White {
+  @apply bg-none bg-white
+  text-secondary;
+}
+.White:hover {
+  @apply bg-tertiary text-white
+  transition-all
+  duration-300;
+}
+
+.Primary {
+  @apply bg-none bg-primary
+  text-white;
+  text-shadow: 0.2px 0.2px 2.5px black;
+}
+.Primary:hover {
+  @apply bg-tertiary text-white
+  transition-all
+  duration-300;
+}
+
+.Tertiary {
+  @apply bg-none bg-tertiary
+  text-white;
+}
+.Tertiary:hover {
+  @apply bg-secondary text-white
+  transition-all
+  duration-300;
+}
+
+.AccentGradient {
+  @apply bg-gradient-to-r from-accent via-red-200 to-accent;
+}
+
+.GreenGradient {
+  @apply bg-gradient-to-r from-green-500 via-green-200 to-green-500;
+}
+
+.RedGradient {
+  @apply bg-gradient-to-r from-red-500 via-red-200 to-red-500;
+}
+
+.Ring {
+  @apply border-2 border-solid border-tertiary;
+}
+
+.Gray-Ring {
+  @apply border-1 border-solid border-gray-300
+  text-gray-400  
+  rounded-lg;
+}
+
+.Disable,
+.Disable:hover {
+  @apply bg-none
+  bg-gray-500 bg-opacity-30
+  shadow-none
+  cursor-not-allowed;
+}
+
+.Rounded {
+  @apply rounded-full;
+}
+
+.Squared {
+  @apply rounded-xl;
+}
+
+.Big {
+  @apply h-16 px-16 text-3xl font-normal;
+}
+
+/* specified button */
+.ConnectWallet {
+  @apply my-auto px-10
+  
+  sm:text-sm;
+}
+
+.SubcribeBtn {
+  @apply w-96 mx-auto text-lg
+  
+  md:text-base
+  md:w-80 
+  md:h-11;
+}
+
+.LaunchBtn {
+  @apply mx-auto
+
+  md:text-2xl
+  md:px-12;
+}
+
+.ViewmoreBtn {
+  @apply mx-auto mt-16
+  text-xl;
+}
+
+.JoinPoolBtn {
+  @apply capitalize text-xl font-bold
+  w-44 m-auto
+  mb-5;
+}
+
+.NAbtn,
+.ClaimBtn {
+  @apply mx-20;
+}
+
+.MaxBtn {
+  @apply font-medium text-sm
+  h-7 px-3
+  my-auto mx-2;
+}
+
+.SwapBtn {
+  @apply h-12 w-full
+  text-2xl font-semibold tracking-wide;
+}
+
+.Loading {
+  @apply flex flex-row justify-center
+  mx-auto;
+}
+.Loading > span {
+  @apply my-auto ml-2;
+}
+
+.KYCBtn {
+  @apply mb-10 mt-5 mx-auto
+  w-48
+  uppercase text-xl;
+}
+
+.GetWhitelistBtn {
+  @apply text-lg
+  font-bold;
+}
+
+.ApplyWhitelistBtn {
+  @apply text-lg rounded-lg
+  font-bold
+  mb-4;
+}
+
+.GoToAccountBtn {
+  @apply text-lg
+  font-bold;
+}
+
+.WithdrawBtn {
+  @apply mx-8 w-full
+  rounded-xl;
+}
+
+.FundBtn {
+  @apply ml-8
+  px-10
+  rounded-xl;
+}
+
+.EditBtn {
+  @apply mr-8
+  px-3
+  rounded-xl
+
+  lg:mr-0;
+}
+
+.SubmitEditPoolBtn {
+  @apply mt-5 w-full;
+}
+
+.StakeBtn {
+  @apply text-xl font-bold;
+}
+
+.DREBuyMoreBtn {
+  @apply text-lg font-bold;
+}
+
+.DREWithdrawBtn {
+  @apply text-lg font-bold;
+}

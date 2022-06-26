@@ -1,0 +1,17 @@
+.Website {
+  @apply flex;
+}
+
+.Website > h4 {
+  @apply font-bold
+  pb-3;
+}
+
+.aTag {
+  @apply font-semibold
+  text-secondary;
+}
+
+.Description {
+  @apply font-normal text-justify;
+}

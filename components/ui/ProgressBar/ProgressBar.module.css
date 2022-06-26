@@ -1,0 +1,50 @@
+.ProgressDetail {
+  @apply my-auto
+}
+  
+.ProgressInforRightPadding {
+  @apply flex justify-end mx-6
+}
+.ProgressInforLeftPadding {
+  @apply flex justify-start mx-6
+}
+
+.ProgressInforRightPadding > p, .ProgressInforLeftPadding > p {
+  @apply text-sm font-semibold
+}
+
+.ProgressBar {
+  @apply flex flex-wrap
+}
+
+.Meter {
+  @apply w-full mx-6
+}
+
+.Meter::-webkit-meter-bar {
+  @apply bg-gray-300
+  border-none;
+  height: 10px;
+}
+
+.Meter::-webkit-meter-optimum-value {
+  @apply bg-primary
+  rounded-full;
+  height: 10px;
+} 
+
+/* firefox css meter bar */
+.Meter {
+  width: 100%;
+  height: 10px;
+  background: #d1d5db;
+  border-radius: 9px;
+}
+.Meter::-moz-meter-bar {
+  width: 100%;
+  height: 10px;
+}
+.Meter:-moz-meter-optimum::-moz-meter-bar {
+  background: #89CFF0;
+  border-radius: 16px;
+}

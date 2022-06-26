@@ -1,0 +1,111 @@
+.TokenCard {
+  @apply font-montserrat
+  flex flex-col justify-between
+  h-full w-full
+  px-7;
+}
+
+.Title {
+  @apply flex my-5;
+}
+
+.Title > h3 {
+  @apply uppercase font-bold
+  inline border-b-3 border-primary
+  text-xl
+  content-start;
+}
+
+.Information {
+  @apply flex flex-row
+  text-left
+  my-5;
+}
+
+.Label {
+  @apply w-60 inline-block
+  font-normal text-xl;
+}
+
+.Value {
+  @apply w-[535px]
+  font-bold text-xl
+  overflow-hidden
+  overflow-ellipsis
+
+  xl:w-[500px];
+}
+
+.ProgressSection {
+  @apply mb-4;
+}
+
+.ProgressTime {
+  @apply flex flex-row justify-between
+  mt-3;
+}
+
+.StartDate {
+  @apply text-left;
+}
+
+.StartDate > p:first-child {
+  @apply font-bold;
+}
+
+.StartDate > p:last-child {
+  @apply font-normal text-sm;
+}
+
+.EndDate {
+  @apply text-right;
+}
+
+.EndDate > p:first-child {
+  @apply font-bold;
+}
+
+.EndDate > p:last-child {
+  @apply font-normal text-sm;
+}
+
+.ProgressBar {
+  @apply flex flex-wrap
+  h-16;
+}
+
+.Meter {
+  @apply my-auto;
+}
+
+.Meter::-webkit-meter-bar {
+  @apply bg-gray-300
+  border-none;
+  height: 32px;
+}
+
+.Meter::-webkit-meter-optimum-value {
+  @apply bg-progressBarBg bg-left
+  rounded-full;
+  height: 32px;
+}
+
+/* firefox css meter bar */
+.Meter {
+  width: 100%;
+  height: 32px;
+  background: #d1d5db;
+  border-radius: 32px;
+}
+.Meter::-moz-meter-bar {
+  width: 100%;
+  height: 32px;
+}
+.Meter:-moz-meter-optimum::-moz-meter-bar {
+  background-image: url(/ProgressBarBg.png);
+  border-radius: 40px;
+}
+
+.ProgressInfor {
+  @apply font-bold text-lg;
+}

@@ -1,0 +1,19 @@
+.Page {
+  @apply mx-auto px-3
+  min-w-1040
+}
+
+.SearchBar {
+  @apply flex flex-row 
+  my-10
+  border-2 border-solid rounded-xl border-gray-200
+  focus-within:border-secondary;
+
+}
+
+.SearchIcon {
+  @apply flex flex-col justify-center text-center
+  text-gray-500
+  w-10 h-10 
+  ml-2 my-auto
+}

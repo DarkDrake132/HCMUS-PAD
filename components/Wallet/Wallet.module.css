@@ -1,0 +1,10 @@
+.Wallet {
+  @apply rounded-lg
+  flex justify-center
+  py-12
+  m-3
+
+  hover:bg-primary 
+  hover:bg-opacity-50
+  transition-all;
+}

@@ -1,0 +1,74 @@
+.Wrapper {
+  @apply flex flex-row justify-center
+  h-screen
+}
+.Logo {
+  @apply bg-logoOutsideBg bg-contain bg-center
+  flex flex-row justify-center
+  my-auto;
+  width: 80px;
+  height: 138px;
+}
+
+.LogoInside {
+  @apply animate-spin-slow;
+  margin-top: 6px;
+  width: 68px;
+  height: 68px;
+}
+
+.Loading {
+  @apply flex flex-row
+  my-auto pb-12
+}
+
+.Loading > p {
+  @apply font-vlAllRoundGothicBook font-normal
+  text-4xl text-tertiary
+  ml-4
+}
+
+/* 3 Dot typing animation  */
+.DotTyping{
+  --pos: 999px;
+  --spacing: 20px;
+  --height: -12px;
+  --color:#2E8BC0;
+}
+
+.DotTyping {
+  @apply relative
+  rounded-full 
+  bg-transparent
+  mt-7 ml-8;
+  width: 6px;
+  height: 6px;
+  left: calc(var(--pos)*-1);
+  color: var(--color);
+  box-shadow: calc(var(--pos) - var(--spacing)) 0 0 0 var(--color), var(--pos) 0 0 0 var(--color), calc(var(--pos) + var(--spacing)) 0 0 0 var(--color);
+  animation: dotTyping 1.5s infinite linear;
+}
+
+@keyframes dotTyping {
+  0% {
+    box-shadow: calc(var(--pos) - var(--spacing)) 0 0 0 var(--color), var(--pos) 0 0 0 var(--color), calc(var(--pos) + var(--spacing)) 0 0 0 var(--color);
+  }
+  16.667% {
+    box-shadow: calc(var(--pos) - var(--spacing)) 0 0 0 var(--color), var(--pos) 0 0 0 var(--color), calc(var(--pos) + var(--spacing)) 0 0 0 var(--color);
+  }
+  33.333% {
+    box-shadow: calc(var(--pos) - var(--spacing)) var(--height) 0 0 var(--color), var(--pos) 0 0 0 var(--color), calc(var(--pos) + var(--spacing)) 0 0 0 var(--color);
+  }
+  50% {
+    box-shadow: calc(var(--pos) - var(--spacing)) calc(var(--height)/2) 0 0 var(--color), var(--pos) var(--height) 0 0 var(--color), calc(var(--pos) + var(--spacing)) 0 0 0 var(--color);
+  }
+  66.667% {
+    box-shadow: calc(var(--pos) - var(--spacing)) 0 0 0 var(--color), var(--pos) calc(var(--height)/2) 0 0 var(--color), calc(var(--pos) + var(--spacing)) var(--height) 0 0 var(--color);
+  }
+  83.333% {
+    box-shadow: calc(var(--pos) - var(--spacing)) 0 0 0 var(--color), var(--pos) 0 0 0 var(--color), calc(var(--pos) + var(--spacing)) calc(var(--height)/2) 0 0 var(--color);
+  }
+  100% {
+    box-shadow: calc(var(--pos) - var(--spacing)) 0 0 0 var(--color), var(--pos) 0 0 0 var(--color), calc(var(--pos) + var(--spacing)) 0 0 0 var(--color);
+  }
+}
