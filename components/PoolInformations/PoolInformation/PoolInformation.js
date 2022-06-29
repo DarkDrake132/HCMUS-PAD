@@ -3,6 +3,9 @@ import Button from "../../ui/Button/Button";
 import Card from "../../ui/Card/Card";
 import classes from "./PoolInformation.module.css";
 
+// MUI COMPONENTS
+import MuiButton from "@mui/material/Button";
+
 const PoolInformation = (props) => {
   const pool = props.pool;
   const tokenSymbol = props.tokenSymbol;
@@ -51,18 +54,18 @@ const PoolInformation = (props) => {
       <div className={classes.PoolCard}>
         <div>
           <div className={classes.Title}>
-            <h3>pool informations</h3>
+            <h3 style={{ textTransform: "none" }}>Pool Information</h3>
           </div>
           <div>{informations}</div>
         </div>
         <div className={classes.Button}>
-          <Button
-            style="JoinPoolBtn Squared"
+          <MuiButton
+            variant="contained"
             disabled={props.loading || !props.joinable}
-            clicked={props.joinPoolHandler}
+            onClick={props.joinPoolHandler}
           >
-            join pool
-          </Button>
+            Join Pool
+          </MuiButton>
         </div>
       </div>
     </Card>

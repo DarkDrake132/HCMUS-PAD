@@ -12,6 +12,11 @@
     "prod:build": "NODE_ENV=production yarn run build:css && yarn run build"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@fontsource/roboto": "^4.5.7",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.8.5",
     "@sendgrid/mail": "^7.6.1",
     "@truffle/contract": "^4.4.2",
     "@truffle/hdwallet-provider": "^1.5.0",

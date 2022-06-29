@@ -1,14 +1,27 @@
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+
 import "../styles/tailwind.css";
 
-import { useEffect, useState, Fragment } from "react";
+// MUI COMPONENTS
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+
+// CUSTOM THEME CONFIG
+import themeObject from "../theme";
+
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import WalletProvider from "../context/WalletContext";
 import NotificationProvider from "../context/NotificationContext";
 import Script from "next/script";
-import * as gtag from "../lib/gtag";
 
 import Layout from "../hoc/Layout/Layout";
 import LogoLoadingSpinner from "../components/ui/LogoLoadingSpinner/LogoLoadingSpinner";
+
+const customThemeObject = createTheme(themeObject);
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -19,7 +32,6 @@ function MyApp({ Component, pageProps }) {
   };
 
   const handlerRouterChangeComplete = (url) => {
-    gtag.pageview(url);
     setLoading(false);
   };
 
@@ -34,35 +46,17 @@ function MyApp({ Component, pageProps }) {
   }
 
   return (
-    <Fragment>
+    <ThemeProvider theme={customThemeObject}>
+      <CssBaseline />
       <NotificationProvider>
         <WalletProvider>
           <Layout>
-            {/* Global Site Tag (gtag.js) - Google Analytics */}
-            <Script
-              strategy="afterInteractive"
-              src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-            />
-            <Script
-              id="gtag-init"
-              strategy="afterInteractive"
-              dangerouslySetInnerHTML={{
-                __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${gtag.GA_TRACKING_ID}', {
-                page_path: window.location.pathname,
-              });
-            `,
-              }}
-            />
             {/* This will view a loading progress Logo when switching pages */}
             {loading ? <LogoLoadingSpinner /> : <Component {...pageProps} />}
           </Layout>
         </WalletProvider>
       </NotificationProvider>
-    </Fragment>
+    </ThemeProvider>
   );
 }
 

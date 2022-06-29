@@ -114,8 +114,8 @@
 
 /* Ended pools */
 .EndedPoolWrapper {
-  @apply bg-endedPoolsBg
-  pb-16;
+  /* @apply bg-endedPoolsBg */
+  @apply pb-16
 }
 .EndedPools {
   @apply container mx-auto

@@ -30,6 +30,13 @@ import classes from "../styles/Account.module.css";
 import { getErc20 } from "../contract/services/client/erc20";
 import Big from "big.js";
 
+// MUI COMPONENTS
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Toolbar from "@mui/material/Toolbar";
+import MuiButton from "@mui/material/Button";
+
 export default function Account() {
   const router = useRouter();
 
@@ -196,11 +203,11 @@ export default function Account() {
                     clicked: (e) => fundButtonOnClick(e, pool),
                     content: "Fund",
                   },
-                  {
-                    style: "RedGradient EditBtn",
-                    clicked: (e) => editButtonOnClick(e, pool.id),
-                    content: "Edit",
-                  },
+                  // {
+                  //   style: "RedGradient EditBtn",
+                  //   clicked: (e) => editButtonOnClick(e, pool.id),
+                  //   content: "Edit",
+                  // },
                 ];
                 if (await isPoolFunded(pool.poolAddress)) {
                   displayButtons = [
@@ -347,46 +354,62 @@ export default function Account() {
   };
 
   //handle KYC function
-  const KYCHandler = () => {
-    window.open(
-      "https://verify-with.blockpass.org/?clientId=dreamstarter_ido_0338e&serviceName=Dreamstarter%20IDO&env=prod"
-    );
-  };
+  const KYCHandler = () => {};
 
   //withdraw content displaying
   const withdrawInfomation = (
-    <Card>
-      <div className={classes.WithdrawPopup}>
-        <div className={classes.Title}>
-          <h3>Withdraw Token</h3>
-        </div>
-        <div className={classes.WithdrawInformation}>
-          <div className={classes.TokenInfo}>
-            <p className={classes.BoldLabel}>Total {networkChain.chainName}:</p>
-            <p className={classes.LightLabel}>
-              {withdrawContent.totalSoldToken} tokens
-            </p>
-          </div>
-          <div className={classes.TokenInfo}>
-            <p className={classes.BoldLabel}>UnsoldToken:</p>
-            <p className={classes.LightLabel}>
+    <Paper sx={{ p: 2, width: "100%" }}>
+      <Grid container direction="column">
+        <Grid item>
+          <Typography sx={{ textAlign: "center" }} variant="h6">
+            Withdraw Token
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Toolbar
+            disableGutters
+            sx={{
+              "&.MuiToolbar-root": {
+                minHeight: 48,
+              },
+            }}
+          >
+            <Typography sx={{ flexGrow: 1 }}>
+              Total {networkChain.chainName}:
+            </Typography>
+            <Typography>{withdrawContent.totalSoldToken} tokens</Typography>
+          </Toolbar>
+        </Grid>
+        <Grid item>
+          <Toolbar
+            disableGutters
+            sx={{
+              "&.MuiToolbar-root": {
+                minHeight: 48,
+              },
+            }}
+          >
+            <Typography sx={{ flexGrow: 1 }}>UnsoldToken :</Typography>
+            <Typography>
               {withdrawContent.tokenforsale - withdrawContent.totalSoldToken}{" "}
               tokens
-            </p>
-          </div>
-        </div>
-        <Button
-          style="WithdrawAllBtn"
-          loading={loading}
-          disabled={loading}
-          clicked={() => {
-            withdrawHandler(withdrawContent.address);
-          }}
-        >
-          Withdraw All Tokens
-        </Button>
-      </div>
-    </Card>
+            </Typography>
+          </Toolbar>
+        </Grid>
+        <Grid item>
+          <MuiButton
+            disabled={loading}
+            variant="contained"
+            fullWidth
+            onClick={() => {
+              withdrawHandler(withdrawContent.address);
+            }}
+          >
+            Withdraw All Tokens
+          </MuiButton>
+        </Grid>
+      </Grid>
+    </Paper>
   );
 
   return (
@@ -403,46 +426,6 @@ export default function Account() {
       >
         {withdrawInfomation}
       </Modal>
-      <div className={classes.Information}>
-        {/* Account informations */}
-        <Card style="WhiteBorder">
-          <div className={classes.WalletInfor}>
-            <div className={classes.Title}>Wallet balance</div>
-            <div className={classes.WalletToken}>
-              <h2>{numberFormatter(totalDRETokens)}</h2>
-              <p>DRE</p>
-            </div>
-            <p className={classes.Noti}>
-              You currently have {totalDRETokens} Dream Token <br />
-              in your wallet
-            </p>
-          </div>
-        </Card>
-        {/* Account KYC status */}
-        <Card style="DashedBorder">
-          <div className={classes.KYCInfor}>
-            <h2 className={classes.Title}>KYC Status</h2>
-            <p className={classes.Noti}>
-              KYC now to join the future journey with us
-            </p>
-            <p className={KYCStatus ? classes.Normal : classes.Danger}>
-              Status:{" "}
-              <span>
-                {KYCStatus
-                  ? "Your wallet has been KYC"
-                  : "Your wallet hasn't been KYC yet"}
-              </span>
-            </p>
-            <Button
-              style="AccentGradient Squared KYCBtn"
-              disabled={KYCStatus}
-              clicked={KYCHandler}
-            >
-              KYC now
-            </Button>
-          </div>
-        </Card>
-      </div>
       {/* ProjectList */}
       <div>
         <PoolListItems

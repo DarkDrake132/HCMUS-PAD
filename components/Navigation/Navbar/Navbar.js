@@ -1,3 +1,6 @@
+// MUI COMPONENTS
+import Typography from "@mui/material/Typography";
+
 import NavLink from "../../ui/NavLink/NavLink";
 
 import classes from "./Navbar.module.css";
@@ -9,7 +12,11 @@ function Navbar() {
         <li className={classes.NavItem}>
           <NavLink href="/pools">
             <div className={classes.NavLink}>
-              <a className={classes.aTag}>Pools</a>
+              <a className={classes.aTag}>
+                <Typography variant="h5" color="white">
+                  Pools
+                </Typography>
+              </a>
               <div></div>
             </div>
           </NavLink>
@@ -17,7 +24,11 @@ function Navbar() {
         <li className={classes.NavItem}>
           <NavLink href="/account">
             <div className={classes.NavLink}>
-              <a className={classes.aTag}>Account</a>
+              <a className={classes.aTag}>
+                <Typography variant="h5" color="white">
+                  Account
+                </Typography>
+              </a>
               <div></div>
             </div>
           </NavLink>

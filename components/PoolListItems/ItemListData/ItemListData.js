@@ -8,6 +8,9 @@ import { useRouter } from "next/router";
 
 import classes from "./ItemListData.module.css";
 
+// MUI COMPONENTS
+import MuiButton from "@mui/material/Button";
+
 const ItemListData = (props) => {
   const router = useRouter();
   const data = props.data;
@@ -56,18 +59,18 @@ const ItemListData = (props) => {
   const CustomButton = displayButtons && (
     <div className={classes.CustomButton}>
       {displayButtons.map((button, index) => (
-        <Button
+        <MuiButton
           key={index}
-          style={button.style}
-          clicked={button.clicked}
-          disabled={button.disabled}
+          onClick={button.clicked}
+          variant="contained"
+          size="large"
         >
           {button.content === "Edit" ? (
             <span className={"material-icons "}>edit</span>
           ) : (
             button.content
           )}
-        </Button>
+        </MuiButton>
       ))}
     </div>
   );

@@ -59,7 +59,7 @@ const SaleInformation = (props) => {
       <div className={classes.TokenCard}>
         <div>
           <div className={classes.Title}>
-            <h3>sale informations</h3>
+            <h3 style={{ textTransform: "none" }}>Sale Information</h3>
           </div>
           <div>{informations}</div>
         </div>

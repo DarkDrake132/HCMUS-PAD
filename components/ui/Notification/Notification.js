@@ -42,7 +42,7 @@ function Notification(props) {
   }
 
   return (
-    <div className={classes.Notification}>
+    <div className={classes.Notification} style={{ background: "black" }}>
       <div>
         {props.type === "Processing" ? (
           <div className={classes.Spinner}>

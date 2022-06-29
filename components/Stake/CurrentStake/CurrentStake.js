@@ -37,14 +37,7 @@ const CurrentStake = (props) => {
         </div>
 
         <div className={classes.BuyAndWithdraw}>
-          <Button
-            style="DREBuyMoreBtn White Squared"
-            clicked={() => {
-              window.open("https://ico.dreamlauncher.org");
-            }}
-          >
-            Buy More DRE
-          </Button>
+          <Button style="DREBuyMoreBtn White Squared">Buy More DRE</Button>
           <Button
             style="DREWithdrawBtn White Squared"
             type="button"

@@ -34,7 +34,7 @@
 }
 
 .CustomButton {
-  @apply flex flex-row justify-between
+  @apply flex flex-row justify-center
   my-auto
   w-60;
 }

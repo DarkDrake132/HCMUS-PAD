@@ -25,7 +25,7 @@ async function hasKYC(address) {
       return true
   }
   return false
-  // await createUser({ Address: address, Email: "test@dream.com" });
+  // await createUser({ Address: address, Email: "test@hcmus.com" });
   // return true;
 }
 

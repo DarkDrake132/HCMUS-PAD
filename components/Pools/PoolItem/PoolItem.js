@@ -1,14 +1,37 @@
-import React from "react";
-
+// NEXT COMPONENTS
 import Image from "next/image";
-import Card from "../../ui/Card/Card";
-import classes from "./PoolItem.module.css";
+
+// HOOKS
 import { useRouter } from "next/router";
 
-//util
-
+// utils
 import { getRemainingTimeString } from "../../../utility/DateUtility";
 import { roundUp, numberFormatter } from "../../../utility/NumberUtility";
+
+// MUI COMPONENTS
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import Toolbar from "@mui/material/Toolbar";
+import { styled } from "@mui/material/styles";
+import LinearProgress, {
+  linearProgressClasses,
+} from "@mui/material/LinearProgress";
+
+const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+  height: 10,
+  borderRadius: 5,
+  [`&.${linearProgressClasses.colorPrimary}`]: {
+    backgroundColor:
+      theme.palette.grey[theme.palette.mode === "light" ? 200 : 800],
+  },
+  [`& .${linearProgressClasses.bar}`]: {
+    borderRadius: 5,
+    backgroundColor: theme.palette.mode === "light" ? "#1a90ff" : "#308fe8",
+  },
+}));
 
 const PoolItem = (props) => {
   const router = useRouter();
@@ -16,31 +39,40 @@ const PoolItem = (props) => {
   let poolStatus;
   if (props.status == "upcoming") {
     poolStatus = (
-      <div className={classes.UpComing}>
+      <Typography
+        variant="subtitle1"
+        color="primary"
+        sx={{ textAlign: "center" }}
+      >
         {getRemainingTimeString(props.beginTime)}
-      </div>
+      </Typography>
     );
   } else {
     poolStatus = (
-      <div className={classes.ProgressDetail}>
-        <h4>Progress</h4>
-        <div className={classes.ProgressBar}>
-          <meter
-            className={classes.Meter}
-            min="0"
-            max="100"
-            value={roundUp((props.soldAmount / props.tokenAmount) * 100, 2)}
-          ></meter>
-        </div>
-        <div className={classes.ProgressInfor}>
-          <p className={classes.ProgressPercent}>
+      <>
+        <Typography variant="subtitle1" sx={{ mb: 0.5 }}>
+          Progress
+        </Typography>
+        <BorderLinearProgress
+          variant="determinate"
+          value={roundUp((props.soldAmount / props.tokenAmount) * 100, 2)}
+        />
+        <Toolbar disableGutters>
+          <Typography sx={{ display: "flex", alignSelf: "flex-start" }}>
             {roundUp((props.soldAmount / props.tokenAmount) * 100, 2)}%
-          </p>
-          <p>
+          </Typography>
+          <Typography
+            sx={{
+              flexGrow: 1,
+              display: "flex",
+              alignSelf: "flex-start",
+              justifyContent: "flex-end",
+            }}
+          >
             {roundUp(props.soldAmount)}/{roundUp(props.tokenAmount)}
-          </p>
-        </div>
-      </div>
+          </Typography>
+        </Toolbar>
+      </>
     );
   }
   /*
@@ -48,19 +80,12 @@ const PoolItem = (props) => {
   */
   const redirectToPoolDetail = () => {
     router.push(`/${props.id}`);
-    // if(props.status === "upcoming") {
-    //   window.open(props.website)
-    // }
-    // else {
-    //   router.push(`/${props.id}`);
-    // }
   };
 
   let CardStyle = "HoverBounce";
   if (props.status === "ended") {
     CardStyle += " WhiteBorder";
   }
-
 
   const totalRaiseDisplay =
     props.totalRaise > 1
@@ -72,56 +97,60 @@ const PoolItem = (props) => {
       : roundUp(props.tokenAmount);
 
   return (
-    <li className={classes.Item} onClick={redirectToPoolDetail}>
-      <Card style={CardStyle}>
-        <div className={classes.PoolCard}>
-          <div className={classes.Image}>
+    <Card sx={{ width: 400 }}>
+      <CardActions
+        sx={{ cursor: "pointer", p: 3 }}
+        onClick={redirectToPoolDetail}
+      >
+        <Grid container direction="column">
+          <Grid item sx={{ textAlign: "center" }}>
             <Image
               src={props.imgSrc}
               width={150}
               height={150}
               alt={props.name}
             />
-          </div>
-          <div className={classes.Informations}>
-            <div className={classes.PoolName}>
-              <h2>{props.name}</h2>
-            </div>
-
+          </Grid>
+          <Grid item>
+            <Typography
+              variant="h4"
+              sx={{ textAlign: "center", fontWeight: 600 }}
+            >
+              {props.name}
+            </Typography>
+          </Grid>
+          <Grid item sx={{ mt: 1 }}>
             {poolStatus}
-
-            <div className={classes.Detail}>
-              <div className={classes.DetailItem}>
-                <p>Total Raise</p>
-                <h3 className={classes.PrimaryHighlighted}>
-                  {totalRaiseDisplay + " " + props.chainName}
-                </h3>
-              </div>
-              <div className={classes.DetailItem}>
-                <p>Total Token</p>
-                <h3 className={classes.SecondaryHighlighted}>
-                  {
-                    /*Check if the pool is upcoming type*/
-                    props.status !== "upcoming"
-                      ? tokenAmountDisplay
-                      : "TBA"
-                  }
-                </h3>
-              </div>
-              <div className={classes.DetailItem}>
-                <p>Participants</p>
-                <h3 className={classes.SecondaryHighlighted}>
-                  {
-                    /*Check if the pool is upcoming type*/
-                    props.status !== "upcoming" ? props.participants : "TBA"
-                  }
-                </h3>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Card>
-    </li>
+          </Grid>
+          <Grid item container sx={{ mt: 3, textAlign: "center" }}>
+            <Grid item xs={4}>
+              <Typography>Total raise</Typography>
+              <Typography variant="h6" color="secondary">
+                {totalRaiseDisplay + " " + props.chainName}
+              </Typography>
+            </Grid>
+            <Grid item xs={4}>
+              <Typography>Total Token</Typography>
+              <Typography variant="h6" color="primary">
+                {
+                  /*Check if the pool is upcoming type*/
+                  props.status !== "upcoming" ? tokenAmountDisplay : "TBA"
+                }
+              </Typography>
+            </Grid>
+            <Grid item xs={4}>
+              <Typography>Participants</Typography>
+              <Typography variant="h6" color="primary">
+                {
+                  /*Check if the pool is upcoming type*/
+                  props.status !== "upcoming" ? props.participants : "TBA"
+                }
+              </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+      </CardActions>
+    </Card>
   );
 };
 

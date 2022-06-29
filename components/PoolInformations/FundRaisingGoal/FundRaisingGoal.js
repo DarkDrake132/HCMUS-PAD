@@ -21,14 +21,7 @@ const Upcoming = (props) => {
         <p className={classes.Value}>Some Value</p>
       </div> */}
       <div className={classes.Button}>
-        <Button
-          style="White Gray-Ring GetWhitelistBtn"
-          clicked={() => {
-            window.open(
-              "https://docs.dreamlauncher.org/guides/how-to-join-the-whitelist-in-the-public-pool"
-            );
-          }}
-        >
+        <Button style="White Gray-Ring GetWhitelistBtn">
           How to join whitelist ?
         </Button>
       </div>

@@ -10,7 +10,7 @@ function PoolAboutDetail(props) {
   return (
     <Fragment>
       <div className={classes.Website}>
-        <h4>Website:</h4>
+        <h4 style={{ marginRight: 8 }}>Website :</h4>
         <Link href={aboutInfo.website}>
           <a target="blank" className={classes.aTag}>
             {aboutInfo.website}

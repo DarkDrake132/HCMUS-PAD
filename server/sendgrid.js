@@ -14,7 +14,7 @@ const sendEmail = (
 ) => {
     const msg = {
       to: toEmail,
-      from: 'dreamlauncher.ido@gmail.com',
+      from: 'hcmuspad@gmail.com',
       templateId,
       dynamicTemplateData,
     };

@@ -51,6 +51,13 @@ import {
 import { isNumeric, roundUp } from "../../utility/NumberUtility";
 import * as notiUtils from "../../utility/NotificationUtility";
 
+// CUSTOM ICONS
+import { EthereumLogo } from "../../components/Header/Header.js";
+
+// MUI COMPONENTS
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
+
 const isUserSameNetwork = async (chainId) => {
   return (await getChainId()) === chainId;
 };
@@ -482,20 +489,24 @@ function ActiveAndEndedSection(props) {
       </form>
     );
   }
-
+  const errorMessage = poolPause
+    ? props.pool.status == poolStatus.ENDED
+      ? notiUtils.PAUSE_REDEEM
+      : notiUtils.PAUSE_SWAP
+    : null;
   return (
     <React.Fragment>
       <Modal show={swapping} modalClosed={joinPoolCancelHandler} hasBackdrop>
         {swapCard}
       </Modal>
 
-      {poolPause ? (
-        props.pool.status == poolStatus.ENDED ? (
-          <p className={classes.PauseNotification}>{notiUtils.PAUSE_REDEEM}</p>
-        ) : (
-          <p className={classes.PauseNotification}>{notiUtils.PAUSE_SWAP}</p>
-        )
-      ) : null}
+      {errorMessage && (
+        <Alert severity="error">
+          <AlertTitle>Error</AlertTitle>
+          {errorMessage}
+        </Alert>
+      )}
+
       <div className={classes.InforSection}>
         <div className={classes.PoolInformation}>
           <PoolInformation
@@ -534,7 +545,6 @@ function ActiveAndEndedSection(props) {
 }
 
 function UpcomingSection(props) {
-  //console.log('upcoming props: ', props)
   return (
     <React.Fragment>
       <div className={classes.InforSection}>
@@ -546,19 +556,6 @@ function UpcomingSection(props) {
             totalSupply={props.pool.totalSupply}
             whitelistBegin={props.pool.whitelistBegin}
             whitelistEnd={props.pool.whitelistEnd}
-          />
-        </div>
-
-        <div className={classes.FundRaisingGoal}>
-          <FundRaisingGoal
-            poolName={props.pool.poolName}
-            moneyRaise={props.pool.moneyRaise}
-            beginTime={props.pool.beginTime}
-            endTime={props.pool.endTime}
-            whitelistBegin={props.pool.whitelistBegin}
-            whitelistEnd={props.pool.whitelistEnd}
-            whitelistLink={props.pool.whitelistLink}
-            isKYC={props.isKYC}
           />
         </div>
       </div>
@@ -648,19 +645,6 @@ function DetailPage(props) {
           <div className={classes.StatusAndNetwork}>
             {/* Project status */}
             <h2 className={classes.Status}>{props.pool.status}</h2>
-            <div>
-              <Image
-                src={`/icon/${getChainNameById(props.pool.chainId)}_icon.png`}
-                alt="network"
-                width="50px"
-                height="50px"
-              />
-            </div>
-
-            {/* this could be change when we add others network to our project */}
-            <h2 className={classes.Network}>
-              {getChainNameById(props.pool.chainId)}
-            </h2>
           </div>
           <div className={classes.SocialMedia}>
             <ul>
@@ -711,13 +695,16 @@ function DetailPage(props) {
       )}
 
       {props.pool.stakeAddress ? (
-        <Stake stakeAddress={props.pool.stakeAddress} whitelistEnd={props.pool.whitelistEnd} />
+        <Stake
+          stakeAddress={props.pool.stakeAddress}
+          whitelistEnd={props.pool.whitelistEnd}
+        />
       ) : null}
       <div className={classes.PoolAboutSection}>
         <Card>
           <TabBar
             titleList={
-              props.pool.stakeAddress 
+              props.pool.stakeAddress
                 ? ["About Project", "Staking Leader Board"]
                 : ["About Project"]
             }

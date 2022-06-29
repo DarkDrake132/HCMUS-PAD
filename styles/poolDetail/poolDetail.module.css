@@ -99,7 +99,7 @@
 
 .UpcomingSale {
   @apply flex flex-grow 
-  col-span-3;
+  col-span-12;
 }
 
 .FundRaisingGoal {

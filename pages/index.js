@@ -5,6 +5,20 @@ import { useRouter } from "next/router";
 
 import { NotificationContext } from "../context/NotificationContext";
 
+// MUI COMPONENTS
+import MuiButton from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+
+import Grid from "@mui/material/Grid";
+
+import { keyframes } from "@mui/system";
+
+// NEXT COMPONENTS
+import Image from "next/image";
+
 import Button from "../components/ui/Button/Button";
 import PoolList from "../components/Pools/PoolList/PoolList";
 import ChainLogo from "../components/ui/ChainLogo/ChainLogo";
@@ -24,6 +38,64 @@ import { getChainNameById } from "../contract/services/client/connection";
 //CHAINS
 import { CHAIN } from "../utility/Constant";
 
+const moveUpDown = keyframes`
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50px); }
+`;
+
+const HomeHero = () => {
+  return (
+    <Container maxWidth="xl" sx={{ mt: 10 }}>
+      <Grid container>
+        <Grid item xs={8} container rowSpacing={4} direction="column">
+          <Grid item>
+            <Typography
+              variant="h1"
+              sx={{
+                background: "red",
+                backgroundImage:
+                  "linear-gradient(to right, #5433ff, #20bdff, #a5fecb)",
+                backgroundSize: "100%",
+                backgroundRepeat: "repeat",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                MozBackgroundClip: "text",
+                MozTextFillColor: "transparent",
+              }}
+              fontWeight={700}
+            >
+              Get early access to the ideas of tomorrow
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography variant="h6" fontWeight={400} color="text.secondary">
+              Highly-vetted ideas and teams you can trust. Supported by
+              industry-leading creators and funds.
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item xs={4}>
+          <Box
+            sx={{
+              WebkitAnimation: `${moveUpDown} 4s ease-in-out infinite alternate`,
+              animation: `${moveUpDown} 4s ease-in-out infinite alternate`,
+            }}
+          >
+            <Image
+              src={
+                "https://polkastarter.com/_next/image?url=%2Fillustrations%2Fhero%402x.png&w=1920&q=75"
+              }
+              alt=""
+              width={400}
+              height={400}
+            />
+          </Box>
+        </Grid>
+      </Grid>
+    </Container>
+  );
+};
+
 function MailSubscribePopUp(props) {
   const [value, setValue] = useState(props.value);
 
@@ -34,20 +106,24 @@ function MailSubscribePopUp(props) {
 
   return (
     <Card style="Tertiary">
-      <div className={classes.EditPopup}>
+      <div className={classes.EditPopup} style={{ background: "#001E3C" }}>
         <h3>Subscribe for upcoming pool</h3>
-        <Input
-          value={value}
-          changed={changeHandler}
+        <TextField
           placeholder="example@gmail.com"
-        ></Input>
-        <Button
-          style="SubmitEditPoolBtn"
+          fullWidth
+          sx={{ mb: 2 }}
+          onChange={changeHandler}
+          value={value}
+        />
+        <MuiButton
           type="submit"
-          clicked={(event) => props.submitHandler(event, value)}
+          variant="contained"
+          size="large"
+          fullWidth
+          onClick={(event) => props.submitHandler(event, value)}
         >
           Subscribe
-        </Button>
+        </MuiButton>
       </div>
     </Card>
   );
@@ -66,7 +142,12 @@ export default function Home(props) {
   const [isSubscribeClicked, setIsSubscribeClicked] = useState(false);
 
   let liveAndUpcomingList = (
-    <p className={classes.EmptyAnnounce1}>This list is empty !!!</p>
+    <p
+      className={classes.EmptyAnnounce1}
+      style={{ color: "grey", textTransform: "none" }}
+    >
+      This list is empty !!!
+    </p>
   );
   if (props.activePools?.length > 0 || props.upcomingPools?.length > 0) {
     liveAndUpcomingList = (
@@ -78,7 +159,9 @@ export default function Home(props) {
     <div className={classes.EndedPoolWrapper}>
       <div className={classes.EndedPools}>
         <h2>Ended Pools</h2>
-        <p className={classes.EmptyAnnounce2}>This list is empty !!!</p>
+        <Typography variant="h4" color="gray" sx={{ textAlign: "center" }}>
+          This list is empty !!!
+        </Typography>
       </div>
     </div>
   );
@@ -90,9 +173,20 @@ export default function Home(props) {
           <PoolList pools={props.endedPools} />
         </div>
         <div className={classes.Viewmore}>
-          <Button style="Tertiary ViewmoreBtn" clicked={RedirectUserToPools}>
+          <MuiButton
+            variant="contained"
+            color="primary"
+            size="large"
+            sx={{
+              alignSelf: "center",
+              justifySelf: "center",
+              mx: "auto",
+              mt: 3,
+            }}
+            onClick={RedirectUserToPools}
+          >
             View more
-          </Button>
+          </MuiButton>
         </div>
       </div>
     );
@@ -169,7 +263,7 @@ export default function Home(props) {
   return (
     <Fragment>
       <Head>
-        <title>Dream Launcher</title>
+        <title>HCMUSPad</title>
       </Head>
 
       <Modal
@@ -183,89 +277,25 @@ export default function Home(props) {
           <MailSubscribePopUp value={""} submitHandler={subcribeHandler} />
         ) : null}
       </Modal>
-
-      {/*Banner */}
-      <div className={classes.BannerContainer}>
-        <div className={classes.Banner}>
-          <h1 className={classes.Title}>
-            Fly high with da <span className={classes.Highlight}>DREAMERS</span>
-            <br />
-            reach out to the future{" "}
-            <span className={classes.Highlight}>TREASURES</span>
-          </h1>
-          <h4 className={classes.Subtitle}>
-            Bring you the greatest cryptocurrency projects from all blockchains,
-            <br />
-            selected by reputable and experienced teams.
-          </h4>
-          <Button
-            style="White Rounded SubcribeBtn"
-            clicked={() => {
-              console.log("Subcribe button clicked!");
-              setIsSubscribeClicked(true);
-            }}
-          >
-            Subscribe for Upcoming pools
-          </Button>
-        </div>
-        <div className={classes.ChainLogoSection}>
-          <div className={classes.ChainLogo}>
-            {Object.keys(CHAIN).map((key) => {
-              return (
-                <ChainLogo
-                  key={key}
-                  width="150px"
-                  height="35px"
-                  symbol={CHAIN[key]}
-                />
-              );
-            })}
-          </div>
-          <div className={classes.ChainLogoSm}>
-            {Object.keys(CHAIN).map((key) => {
-              return (
-                <ChainLogo
-                  key={key}
-                  width="40px"
-                  height="40px"
-                  symbol={`${CHAIN[key]}`}
-                  sm={true}
-                />
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
+      <HomeHero />
+      <MuiButton
+        variant="contained"
+        sx={{ width: 400, justifySelf: "center", mx: "auto" }}
+        size="large"
+        onClick={() => {
+          setIsSubscribeClicked(true);
+        }}
+      >
+        Subscribe for Upcoming pools
+      </MuiButton>
       <div className={classes.HomePage}>
         {/*Live & Upcoming pools */}
         <div className={classes.LiveAndUpcomingPools}>
-          <h2>Live and Upcoming Pools</h2>
+          <h2 style={{ color: "white" }}>Live and Upcoming Pools</h2>
           {liveAndUpcomingList}
         </div>
         {/*Ended pools */}
         {endedSection}
-        {/* Launch project */}
-        <div className={classes.LaunchProjectWrapper}>
-          <div className={classes.LaunchProject}>
-            <div></div>
-            <p>
-              Fly your <span className={classes.Highlight}>Dream</span> with us?
-            </p>
-            <p className={classes.SmallHighlight}>
-              With <span className={classes.Highlight}>ZERO</span> worry about
-              any <span className={classes.RedHightlight}>SERVICE FEE</span>!
-            </p>
-            <Button
-              style="Rounded Big LaunchBtn"
-              clicked={() => {
-                window.open("https://forms.gle/Kjefq41ShdE4u8tFA");
-              }}
-            >
-              Launch here
-            </Button>
-          </div>
-        </div>
       </div>
     </Fragment>
   );
