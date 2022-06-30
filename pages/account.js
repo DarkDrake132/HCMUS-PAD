@@ -375,7 +375,7 @@ export default function Account() {
             }}
           >
             <Typography sx={{ flexGrow: 1 }}>
-              Total {networkChain.chainName}:
+              Total sold tokens:
             </Typography>
             <Typography>{withdrawContent.totalSoldToken} tokens</Typography>
           </Toolbar>
